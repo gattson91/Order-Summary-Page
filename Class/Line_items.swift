@@ -17,7 +17,7 @@ struct Line_items : Codable {
 	let variant_id : Int?
 	let title : String?
 	let quantity : Int?
-	let price : Double?
+	let price : String?
 	let sku : String?
 	let variant_title : String?
 	let vendor : String?
@@ -32,7 +32,7 @@ struct Line_items : Codable {
 	let product_exists : Bool?
 	let fulfillable_quantity : Int?
 	let grams : Int?
-	let total_discount : Double?
+	let total_discount : String?
 	let fulfillment_status : String?
 	let admin_graphql_api_id : String?
 	let tax_lines : [String]?
@@ -70,7 +70,7 @@ struct Line_items : Codable {
 		variant_id = try values.decodeIfPresent(Int.self, forKey: .variant_id)
 		title = try values.decodeIfPresent(String.self, forKey: .title)
 		quantity = try values.decodeIfPresent(Int.self, forKey: .quantity)
-		price = try values.decodeIfPresent(Double.self, forKey: .price)
+		price = try values.decodeIfPresent(String.self, forKey: .price)
 		sku = try values.decodeIfPresent(String.self, forKey: .sku)
 		variant_title = try values.decodeIfPresent(String.self, forKey: .variant_title)
 		vendor = try values.decodeIfPresent(String.self, forKey: .vendor)
@@ -85,7 +85,7 @@ struct Line_items : Codable {
 		product_exists = try values.decodeIfPresent(Bool.self, forKey: .product_exists)
 		fulfillable_quantity = try values.decodeIfPresent(Int.self, forKey: .fulfillable_quantity)
 		grams = try values.decodeIfPresent(Int.self, forKey: .grams)
-		total_discount = try values.decodeIfPresent(Double.self, forKey: .total_discount)
+		total_discount = try values.decodeIfPresent(String.self, forKey: .total_discount)
 		fulfillment_status = try values.decodeIfPresent(String.self, forKey: .fulfillment_status)
 		admin_graphql_api_id = try values.decodeIfPresent(String.self, forKey: .admin_graphql_api_id)
 		tax_lines = try values.decodeIfPresent([String].self, forKey: .tax_lines)

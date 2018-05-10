@@ -23,13 +23,12 @@ struct Default_address : Codable {
 	let city : String?
 	let province : String?
 	let country : String?
-	let zip : Int?
+	let zip : String?
 	let phone : String?
 	let name : String?
 	let province_code : String?
 	let country_code : String?
 	let country_name : String?
-	let default : Bool?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -49,7 +48,6 @@ struct Default_address : Codable {
 		case province_code = "province_code"
 		case country_code = "country_code"
 		case country_name = "country_name"
-		case default = "default"
 	}
 
 	init(from decoder: Decoder) throws {
@@ -64,13 +62,11 @@ struct Default_address : Codable {
 		city = try values.decodeIfPresent(String.self, forKey: .city)
 		province = try values.decodeIfPresent(String.self, forKey: .province)
 		country = try values.decodeIfPresent(String.self, forKey: .country)
-		zip = try values.decodeIfPresent(Int.self, forKey: .zip)
+		zip = try values.decodeIfPresent(String.self, forKey: .zip)
 		phone = try values.decodeIfPresent(String.self, forKey: .phone)
 		name = try values.decodeIfPresent(String.self, forKey: .name)
 		province_code = try values.decodeIfPresent(String.self, forKey: .province_code)
 		country_code = try values.decodeIfPresent(String.self, forKey: .country_code)
 		country_name = try values.decodeIfPresent(String.self, forKey: .country_name)
-		default = try values.decodeIfPresent(Bool.self, forKey: .default)
-	}
-
+    }
 }

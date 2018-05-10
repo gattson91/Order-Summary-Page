@@ -23,16 +23,16 @@ struct Orders : Codable {
 	let token : String?
 	let gateway : String?
 	let test : Bool?
-	let total_price : Double?
-	let subtotal_price : Double?
+	let total_price : String?
+	let subtotal_price : String?
 	let total_weight : Int?
-	let total_tax : Double?
+	let total_tax : String?
 	let taxes_included : Bool?
 	let currency : String?
 	let financial_status : String?
 	let confirmed : Bool?
-	let total_discounts : Double?
-	let total_line_items_price : Double?
+	let total_discounts : String?
+	let total_line_items_price : String?
 	let cart_token : String?
 	let buyer_accepts_marketing : Bool?
 	let name : String?
@@ -40,11 +40,11 @@ struct Orders : Codable {
 	let landing_site : String?
 	let cancelled_at : String?
 	let cancel_reason : String?
-	let total_price_usd : Double?
+	let total_price_usd : String?
 	let checkout_token : String?
 	let reference : String?
 	let user_id : Int?
-	let location_id : String?
+	let location_id : Int?
 	let source_identifier : String?
 	let source_url : String?
 	let processed_at : String?
@@ -152,16 +152,16 @@ struct Orders : Codable {
 		token = try values.decodeIfPresent(String.self, forKey: .token)
 		gateway = try values.decodeIfPresent(String.self, forKey: .gateway)
 		test = try values.decodeIfPresent(Bool.self, forKey: .test)
-		total_price = try values.decodeIfPresent(Double.self, forKey: .total_price)
-		subtotal_price = try values.decodeIfPresent(Double.self, forKey: .subtotal_price)
+		total_price = try values.decodeIfPresent(String.self, forKey: .total_price)
+		subtotal_price = try values.decodeIfPresent(String.self, forKey: .subtotal_price)
 		total_weight = try values.decodeIfPresent(Int.self, forKey: .total_weight)
-		total_tax = try values.decodeIfPresent(Double.self, forKey: .total_tax)
+		total_tax = try values.decodeIfPresent(String.self, forKey: .total_tax)
 		taxes_included = try values.decodeIfPresent(Bool.self, forKey: .taxes_included)
 		currency = try values.decodeIfPresent(String.self, forKey: .currency)
 		financial_status = try values.decodeIfPresent(String.self, forKey: .financial_status)
 		confirmed = try values.decodeIfPresent(Bool.self, forKey: .confirmed)
-		total_discounts = try values.decodeIfPresent(Double.self, forKey: .total_discounts)
-		total_line_items_price = try values.decodeIfPresent(Double.self, forKey: .total_line_items_price)
+		total_discounts = try values.decodeIfPresent(String.self, forKey: .total_discounts)
+		total_line_items_price = try values.decodeIfPresent(String.self, forKey: .total_line_items_price)
 		cart_token = try values.decodeIfPresent(String.self, forKey: .cart_token)
 		buyer_accepts_marketing = try values.decodeIfPresent(Bool.self, forKey: .buyer_accepts_marketing)
 		name = try values.decodeIfPresent(String.self, forKey: .name)
@@ -169,11 +169,11 @@ struct Orders : Codable {
 		landing_site = try values.decodeIfPresent(String.self, forKey: .landing_site)
 		cancelled_at = try values.decodeIfPresent(String.self, forKey: .cancelled_at)
 		cancel_reason = try values.decodeIfPresent(String.self, forKey: .cancel_reason)
-		total_price_usd = try values.decodeIfPresent(Double.self, forKey: .total_price_usd)
+		total_price_usd = try values.decodeIfPresent(String.self, forKey: .total_price_usd)
 		checkout_token = try values.decodeIfPresent(String.self, forKey: .checkout_token)
 		reference = try values.decodeIfPresent(String.self, forKey: .reference)
 		user_id = try values.decodeIfPresent(Int.self, forKey: .user_id)
-		location_id = try values.decodeIfPresent(String.self, forKey: .location_id)
+		location_id = try values.decodeIfPresent(Int.self, forKey: .location_id)
 		source_identifier = try values.decodeIfPresent(String.self, forKey: .source_identifier)
 		source_url = try values.decodeIfPresent(String.self, forKey: .source_url)
 		processed_at = try values.decodeIfPresent(String.self, forKey: .processed_at)
@@ -204,5 +204,4 @@ struct Orders : Codable {
 		refunds = try values.decodeIfPresent([String].self, forKey: .refunds)
 		customer = try Customer(from: decoder)
 	}
-
 }

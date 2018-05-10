@@ -22,7 +22,7 @@ struct Customer : Codable {
 	let last_name : String?
 	let orders_count : Int?
 	let state : String?
-	let total_spent : Double?
+	let total_spent : String?
 	let last_order_id : Int?
 	let note : String?
 	let verified_email : Bool?
@@ -69,7 +69,7 @@ struct Customer : Codable {
 		last_name = try values.decodeIfPresent(String.self, forKey: .last_name)
 		orders_count = try values.decodeIfPresent(Int.self, forKey: .orders_count)
 		state = try values.decodeIfPresent(String.self, forKey: .state)
-		total_spent = try values.decodeIfPresent(Double.self, forKey: .total_spent)
+		total_spent = try values.decodeIfPresent(String.self, forKey: .total_spent)
 		last_order_id = try values.decodeIfPresent(Int.self, forKey: .last_order_id)
 		note = try values.decodeIfPresent(String.self, forKey: .note)
 		verified_email = try values.decodeIfPresent(Bool.self, forKey: .verified_email)
