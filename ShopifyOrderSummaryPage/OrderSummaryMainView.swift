@@ -52,12 +52,14 @@ class OrderSummaryMainView: UIViewController {
                     print("Province \(province), has \(orderCount) orders")
                 }
                 // date formatter from string to NSDate
-                //still outputting unformatted date...
-                let formatter = DateFormatter()
-                formatter.dateStyle = DateFormatter.Style.short
-                formatter.timeStyle = .none
-                for formatter in responseModel.orders! {
-                    print(formatter.created_at)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                for testOrder in responseModel.orders! {
+                    let date = dateFormatter.date(from: testOrder.created_at!)!
+                    let calendar = Calendar.current
+                    let year = calendar.component(.year, from: date)
+                    print(year)
+                    //print(testOrder.created_at)
                 }
                /* if let checkYear = self.yearCount[(order.created_at?.year)!]*/
                 
