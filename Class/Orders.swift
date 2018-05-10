@@ -204,4 +204,6 @@ struct Orders : Codable {
 		refunds = try values.decodeIfPresent([String].self, forKey: .refunds)
 		customer = try Customer(from: decoder)
 	}
+    
+
 }
